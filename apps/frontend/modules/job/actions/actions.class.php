@@ -8,6 +8,8 @@
  * @author     Your name here
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
+
+
 class jobActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
@@ -19,8 +21,10 @@ class jobActions extends sfActions
 
   public function executeShow(sfWebRequest $request)
   {
-    $this->jobeet_job = Doctrine_Core::getTable('JobeetJob')->find(array($request->getParameter('id')));
-    $this->forward404Unless($this->jobeet_job);
+//   	$this->job = Doctrine_Core::getTable('JobeetJob')->find(array($request->getParameter('id')));
+//   	$this->forward404Unless($this->job);
+    $this->job = Doctrine_Core::getTable('JobeetJob')->find(array($request->getParameter('id')));
+    $this->forward404Unless($this->job);
   }
 
   public function executeNew(sfWebRequest $request)
@@ -76,4 +80,13 @@ class jobActions extends sfActions
       $this->redirect('job/edit?id='.$jobeet_job->getId());
     }
   }
+  
+  public function executeMyMethod(sfWebRequest $request)
+  {
+  	$this->foo = 'bar';
+  	$this->bar = array('bar', 'baz');
+  }
+  
+  
+  
 }

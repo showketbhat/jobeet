@@ -18,7 +18,27 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>Jobeet - Your best job board</title>
+	
+<!-- 		<title>Jobeet - Your best job board</title> -->
+	
+		<!--Default Title For Pages Without Provided Title below way or the comented belower one -->
+		<title>
+			<?php include_slot('title', 'Jobeet - Your best job board') ?> 
+		</title>
+		
+		
+		
+		<title><?php include_slot('title') ?></title>   <!-- page no. 54 (We are adding a Slot here) -->
+
+
+<?php
+/*		<title>
+			<?php if (!include_slot('title')): ?>
+				Jobeet - Your best job board
+			<?php endif ?>
+		</title>
+		
+*/ ?>		
 		<link rel="shortcut icon" href="http://www.symfony.jobeet.lcl/images/favicon.ico" />
 		<?php include_javascripts() ?>
 		<?php include_stylesheets() ?>
