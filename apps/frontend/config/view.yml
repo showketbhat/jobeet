@@ -16,5 +16,5 @@ default:
 
   javascripts:    []
 
-  has_layout:     true
-  layout:         layout
+  has_layout:     true    # change to false if you dont want a layout
+  layout:         layout  #the "layout" means layout.php 

@@ -19,7 +19,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<title>Jobeet - Your best job board</title>
-		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="shortcut icon" href="http://www.symfony.jobeet.lcl/images/favicon.ico" />
 		<?php include_javascripts() ?>
 		<?php include_stylesheets() ?>
 	</head>
