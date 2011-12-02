@@ -66,7 +66,14 @@
 			<tr class="<?php echo fmod($i, 2) ? 'even' : 'odd' ?>">
 				<td class="location"><?php echo $job->getLocation() ?></td>
 				<td class="position">
-					<a href="<?php echo url_for('job/show?id='.$job->getId()) ?>">  <!-- url_for() is a symfony helper -->
+				
+					<?php /* ?><a href="<?php echo url_for('job/show?id='.$job->getId()) ?>">  <!-- This line is Commented
+					 coz the below 2 lines replaced this (page 63).url_for() is a symfony helper --> <?php */ ?>
+					 
+					 
+					<a href="<?php echo url_for('job/show?id='.$job->getId().'&company='.$job->getCompany().
+								'&location='.$job->getLocation().'&position='.$job->getPosition())
+					 ?>"> 
 						<?php echo $job->getPosition() ?>
 					</a>
 				</td>
@@ -75,4 +82,6 @@
 		<?php endforeach ?>
 	</table>
 </div>
+ 
+ 
  

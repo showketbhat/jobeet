@@ -23,6 +23,7 @@ class jobActions extends sfActions
   {
 //   	$this->job = Doctrine_Core::getTable('JobeetJob')->find(array($request->getParameter('id')));
 //   	$this->forward404Unless($this->job);
+	//echo "<pre>"; print_r($request); exit;
     $this->job = Doctrine_Core::getTable('JobeetJob')->find(array($request->getParameter('id')));
     $this->forward404Unless($this->job);
   }

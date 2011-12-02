@@ -1,10 +1,20 @@
+#below page 63 (routing to show related genrated urls, also see indexSuccess.php Line no. 69/70
+ 
+job_show_user:
+  url: /job/:company/:location/:id/:position
+  param: { module: job, action: show }
+  requirements:
+   id: \d+
+  
+#  The above requirements entry forces the id to be a numeric value. If not, the route won’t match.
+
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
 # default rules
 homepage:
   url:   /
-  param: { module: default, action: index }
+  param: { module: job, action: index }
 
 # generic rules
 # please, remove them by adding more specific rules

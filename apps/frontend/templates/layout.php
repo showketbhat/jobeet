@@ -44,6 +44,13 @@
 		<?php include_stylesheets() ?>
 	</head>
 	<body>
+	
+	<h1>
+		<a href="<?php echo url_for('homepage') ?>">
+			<img src="http://www.symfony.jobeet.lcl/images/logo.jpg" alt="Jobeet Job Board" />
+		</a>
+	</h1>
+	
 		<div id="container">
 			<div id="header">
 				<div class="content">
