@@ -66,16 +66,28 @@
 			<tr class="<?php echo fmod($i, 2) ? 'even' : 'odd' ?>">
 				<td class="location"><?php echo $job->getLocation() ?></td>
 				<td class="position">
-				
-					<?php /* ?><a href="<?php echo url_for('job/show?id='.$job->getId()) ?>">  <!-- This line is Commented
-					 coz the below 2 lines replaced this (page 63).url_for() is a symfony helper --> <?php */ ?>
+<!-- 					Below are few Comments for url routhing -->
+					<?php /* url_for('job/show?id='.$job->getId()) ?>">  <!-- This line is Commented
+					 coz the below lines (Comented) replaced this (page 63).url_for() is a symfony helper --> */ ?>
 					 
-					 
-					<a href="<?php echo url_for('job/show?id='.$job->getId().'&company='.$job->getCompany().
-								'&location='.$job->getLocation().'&position='.$job->getPosition())
-					 ?>"> 
+					<?php /*
+					url_for('job/show?id='.$job->getId().'&company='.$job->getCompany().
+								'&location='.$job->getLocation().'&position='.$job->getPosition()) 
+					above code is when we dont use the class and Options in our routing.yml, So we expectly define each parameter
+					that constitude our url. Below lines (Comented) replaced this . I added Class and option in routing.xml. */?>
+					
+					<?php /* url_for(array('sf_route' => 'job_show_user', 'sf_subject' => $job))
+					The one and the below one is alomost same.. I can use either of them after i altered my routing.yml file */?>
+					
+					
+					<?php echo link_to($job->getPosition(), 'job_show_user', $job) 
+					/* this code is same as the below <a> code link_to() helper which generates an <a> tag */
+					?>
+								
+					<?php /* <a href="<?php echo url_for('job_show_user', $job) ?>"> 
 						<?php echo $job->getPosition() ?>
-					</a>
+					</a> */ ?>
+					
 				</td>
 				<td class="company"><?php echo $job->getCompany() ?></td>
 			</tr>

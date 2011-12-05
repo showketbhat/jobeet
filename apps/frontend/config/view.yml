@@ -18,3 +18,9 @@ default:
 
   has_layout:     true    # change to false if you dont want a layout
   layout:         layout  #the "layout" means layout.php 
+  
+#disable layout for this view
+registerSuccess:
+  has_layout:     true    # change to false if you dont want a layout
+  layout:         register #here "register" means register.php 
+ 

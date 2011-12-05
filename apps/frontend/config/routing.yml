@@ -2,9 +2,12 @@
  
 job_show_user:
   url: /job/:company/:location/:id/:position
+  class: sfDoctrineRoute
+  options: {model: JobeetJob, type: object }
   param: { module: job, action: show }
   requirements:
    id: \d+
+   sf_method: [get]
   
 #  The above requirements entry forces the id to be a numeric value. If not, the route won’t match.
 

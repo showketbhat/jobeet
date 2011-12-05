@@ -12,6 +12,7 @@
 
 class jobActions extends sfActions
 {
+	
   public function executeIndex(sfWebRequest $request)
   {
     $this->jobeet_jobs = Doctrine_Core::getTable('JobeetJob')
@@ -19,13 +20,30 @@ class jobActions extends sfActions
       ->execute();
   }
 
+ 
+  
+//  public function executeShow(sfWebRequest $request)
+//  {
+//	 	 $this->job = Doctrine_Core::getTable('JobeetJob')->find(array($request->getParameter('id')));
+//		 $this->forward404Unless($this->job);
+//	}
+  
+//   public function executeShow(sfWebRequest $request)
+//   {
+//   	$this->job = $this->getRoute()->getObject();
+//   	$this->forward404Unless($this->job);
+  	/*
+  	 * This Comented function is a replacement for above comented one. after creating a route The route is able to generate a URL 
+  	 * based on an object, but it is also able to find the object related to a given URL. The related object can be retrieved with
+  	 * the getObject() method of the route object. When parsing an incoming request, the routing stores the matching route object
+  	 * for you to use in the actions. 404 error has been thrown for you automatically by the getRoute() method. So, we can simplify.
+    */
+  	 
+//   }
+  
   public function executeShow(sfWebRequest $request)
   {
-//   	$this->job = Doctrine_Core::getTable('JobeetJob')->find(array($request->getParameter('id')));
-//   	$this->forward404Unless($this->job);
-	//echo "<pre>"; print_r($request); exit;
-    $this->job = Doctrine_Core::getTable('JobeetJob')->find(array($request->getParameter('id')));
-    $this->forward404Unless($this->job);
+  	$this->job = $this->getRoute()->getObject();
   }
 
   public function executeNew(sfWebRequest $request)
@@ -82,10 +100,10 @@ class jobActions extends sfActions
     }
   }
   
-  public function executeMyMethod(sfWebRequest $request)
+  public function executeRegister(sfWebRequest $request)
   {
-  	$this->foo = 'bar';
-  	$this->bar = array('bar', 'baz');
+  	
+  	
   }
   
   
