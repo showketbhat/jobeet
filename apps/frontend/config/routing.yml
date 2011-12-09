@@ -1,9 +1,10 @@
 #below page 63 (routing to show related genrated urls, also see indexSuccess.php Line no. 69/70
- 
+
 job_show_user:
   url: /job/:company/:location/:id/:position
   class: sfDoctrineRoute
   options: {model: JobeetJob, type: object }
+#page 81:-  method_for_query: retrieveActiveJob
   param: { module: job, action: show }
   requirements:
    id: \d+

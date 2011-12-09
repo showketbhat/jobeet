@@ -15,9 +15,22 @@ class jobActions extends sfActions
 	
   public function executeIndex(sfWebRequest $request)
   {
-    $this->jobeet_jobs = Doctrine_Core::getTable('JobeetJob')
-      ->createQuery('a')
-      ->execute();
+//     $this->jobeet_jobs = Doctrine_Core::getTable('JobeetJob')
+//       ->createQuery('a')
+//       ->execute(); 
+
+//   	Above Code Selects Everything While the below uses a WHERE clause Page.. 71
+
+//   	$q = Doctrine_Query::create()
+// 	    ->from('JobeetJob j')
+//   	->where('j.created_at > ?',	date('Y-m-d H:i:s', time() - 86400 * 30));
+//  	$this->jobeet_jobs = $q->execute();
+	
+// Since The Above Query is somehow a buisness logic So we ll migrate it to JobeetJobTable.class.php in lib/models.. Page 75
+  	
+  		$this->jobeet_jobs = Doctrine_Core::getTable('JobeetJob')->getActiveJobs();
+		
+  	
   }
 
  
