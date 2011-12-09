@@ -18,7 +18,7 @@ class JobeetJobTable extends Doctrine_Table
     }
     
 //     page 75
-    public function getActiveJobs($max = 2)
+    public function getActiveJobs($max = 50)
     {
     	$q = $this->createQuery('j')
     	->where('j.created_at > ?',	date('Y-m-d H:i:s', time() - 86400 * 30))
